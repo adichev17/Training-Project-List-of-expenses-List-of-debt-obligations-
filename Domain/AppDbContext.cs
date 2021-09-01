@@ -12,5 +12,6 @@ namespace Training_Project__List_of_expenses_and_List_of_debt_obligations_.Domai
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<Item> ItemsTable { get; set; }
+        public DbSet<Expense> Expenses { get; set; }
     }
 }

@@ -8,18 +8,18 @@ using Training_Project__List_of_expenses_and_List_of_debt_obligations_.Models;
 
 namespace Training_Project__List_of_expenses_and_List_of_debt_obligations_.Controllers
 {
-    public class ItemController : Controller
+    public class ExpenseController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ItemController(AppDbContext context)
+        public ExpenseController(AppDbContext context)
         {
             _context = context;
         }
-
         public IActionResult Index()
         {
-            IEnumerable<Item> objList = _context.ItemsTable;
+            IEnumerable<Expense> objList = _context.Expenses;
+
             return View(objList);
         }
 
@@ -27,11 +27,12 @@ namespace Training_Project__List_of_expenses_and_List_of_debt_obligations_.Contr
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Item obj)
+        public async Task<IActionResult> Create(Expense obj)
         {
-            await _context.ItemsTable.AddAsync(obj);
+            await _context.Expenses.AddAsync(obj);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }

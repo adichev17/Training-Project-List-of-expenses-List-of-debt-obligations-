@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace Training_Project__List_of_expenses_and_List_of_debt_obligations_.Models
 {
-    public class Item
+    public class Expense
     {
-        [Key]  
+        [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Lender { get; set; }
-        [DisplayName("Item Name")]
-        public string ItemName { get; set; }
+        [DisplayName("Expense")]
+        public string ExpenseName { get; set; }
+        public int Amount { get; set; }
     }
 }
