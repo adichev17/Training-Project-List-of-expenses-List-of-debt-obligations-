@@ -29,6 +29,12 @@
                 <tr>
                     <td width="30%">@exp.ExpenseName</td>
                     <td width="30%">@exp.Amount</td>
+                    <td width="40%">
+                        <div class="col-6">
+                            <a class="btn btn-primary" asp-controller="Expense" asp-action="Update">Update</a>
+                            <a class="btn btn-primary" asp-controller="Expense" asp-action="Delete">Delete</a>
+                        </div>
+                    </td>
                 </tr>
                 }
             </tbody>
