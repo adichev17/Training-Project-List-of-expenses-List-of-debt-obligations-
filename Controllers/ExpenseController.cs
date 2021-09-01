@@ -32,9 +32,13 @@ namespace Training_Project__List_of_expenses_and_List_of_debt_obligations_.Contr
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Expense obj)
         {
-            await _context.Expenses.AddAsync(obj);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                await _context.Expenses.AddAsync(obj);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
         }
     }
 }
