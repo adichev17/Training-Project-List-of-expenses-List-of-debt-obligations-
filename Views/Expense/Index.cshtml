@@ -21,18 +21,21 @@
                     <th>
                         Amount
                     </th>
+                    <th>
+                        Changes
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 @foreach(var exp in Model)
                 {
                 <tr>
-                    <td width="30%">@exp.ExpenseName</td>
-                    <td width="30%">@exp.Amount</td>
-                    <td width="40%">
-                        <div class="col-6">
-                            <a class="btn btn-primary" asp-controller="Expense" asp-action="Update">Update</a>
-                            <a class="btn btn-primary" asp-controller="Expense" asp-action="Delete">Delete</a>
+                    <td width="35%">@exp.ExpenseName</td>
+                    <td width="35%">@exp.Amount</td>
+                    <td width="30%">
+                        <div class="w-100 btn-group" role="group">
+                            <a class="btn btn-primary mx-1" asp-controller="Expense" asp-route-Id="@exp.Id" asp-action="Update">Update</a>
+                            <a class="btn btn-danger mx-1" asp-controller="Expense" asp-route-Id="@exp.Id"  asp-action="Delete">Delete</a>
                         </div>
                     </td>
                 </tr>
