@@ -8,7 +8,7 @@ Maintaining a list of expenses, a list of bonds
 
 ## Stack
 
-- .NET 3.1
+- .NET Core 3.1
 - ASP.NET MVC
 - Entity Framework Core 5
 - MS SQL Serever
