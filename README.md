@@ -11,7 +11,7 @@ Maintaining a list of expenses, a list of bonds
 - .NET Core 3.1
 - ASP.NET MVC
 - Entity Framework Core 5
-- MS SQL Serever
+- MS SQL Server
 
 ## Getting Started
 
